@@ -15,45 +15,46 @@ agregarEvento()
 
 
 function contartiempo() {
-    if (gano==true ) return
    tiemporegresivoId = setInterval(() => {
    tiempo++;
    mostrartiempo.innerHTML = `${formatoHora(tiempo)}`;
-    if (tiempo<=1800) // 0.5 Minuto
+    if (gano!=true )
     { 
-        mostrarmensaje.innerHTML = `😀 💪 Tú puedes...`;
+                if (tiempo<=1800) // 0.5 Minuto
+                { 
+                    mostrarmensaje.innerHTML = `😀 💪 Tú puedes...`;
+                }
+                else if (tiempo>1800 && tiempo<=3600) // 1  Minuto
+                { 
+                    mostrarmensaje.innerHTML = `😳 Hagale mijo de una...`;
+                }
+                else if (tiempo>3600 && tiempo<=5400) // 1.5 Minuto
+                { 
+                    mostrarmensaje.innerHTML = `😒 Estas seguro que puedes con este juego...`;
+                }
+                else if (tiempo>5400 && tiempo<=7200) // 2 Minuto
+                { 
+                    mostrarmensaje.innerHTML = `🤔 Para completarlo, puedes pedir medio día de vacaciones...`;
+                }
+                else if (tiempo>7200 && tiempo<=9000) // 2.5 Minuto
+                { 
+                    mostrarmensaje.innerHTML = `😴 Ánimo...`;
+                }
+                else if (tiempo>9000 && tiempo<=10800) // 3 Minuto
+                { 
+                    mostrarmensaje.innerHTML = `😡 Parece que vamos mal... `;
+                }
+                else if (tiempo>10800 && tiempo<=12600) // 3 Minuto
+                { 
+                    mostrarmensaje.innerHTML = `👿 Que pasa, que no completas el juego...`;
+                }else if (tiempo>12600 && tiempo<=14400) // 3.5 Minuto
+                { 
+                    mostrarmensaje.innerHTML = `🤤 🤒  me siento mareado...`;
+                }else if (tiempo>14400) // 3.5 Minuto
+                { 
+                    mostrarmensaje.innerHTML = `⏰ te dejo, esto va para largo...`;
+                }
     }
-    else if (tiempo>1800 && tiempo<=3600) // 1  Minuto
-    { 
-        mostrarmensaje.innerHTML = `😳 Hagale mijo de una...`;
-    }
-    else if (tiempo>3600 && tiempo<=5400) // 1.5 Minuto
-    { 
-        mostrarmensaje.innerHTML = `😒 Estas seguro que puedes con este juego...`;
-    }
-    else if (tiempo>5400 && tiempo<=7200) // 2 Minuto
-    { 
-        mostrarmensaje.innerHTML = `🤔 Para completarlo, puedes pedir medio día de vacaciones...`;
-    }
-    else if (tiempo>7200 && tiempo<=9000) // 2.5 Minuto
-    { 
-        mostrarmensaje.innerHTML = `😴 Ánimo...`;
-    }
-    else if (tiempo>9000 && tiempo<=10800) // 3 Minuto
-    { 
-        mostrarmensaje.innerHTML = `😡 Parece que vamos mal... `;
-    }
-    else if (tiempo>10800 && tiempo<=12600) // 3 Minuto
-    { 
-        mostrarmensaje.innerHTML = `👿 Que pasa, que no completas el juego...`;
-    }else if (tiempo>12600 && tiempo<=14400) // 3.5 Minuto
-    { 
-        mostrarmensaje.innerHTML = `🤤 🤒  me siento mareado...`;
-    }else if (tiempo>14400) // 3.5 Minuto
-    { 
-        mostrarmensaje.innerHTML = `⏰ te dejo, esto va para largo...`;
-    }
-
     }, 21);
 }
 function formatoHora(seconds)
@@ -159,7 +160,7 @@ function compareMatriz(MatrizActual)
                 tiempo=0
                 gano=false
                 contartiempo()
-            },8000);
+            },10000);
 
 
 

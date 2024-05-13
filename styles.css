@@ -48,7 +48,7 @@ background-color: #00bbff ;
 .pieza{
     margin: 1px;
     width: 110px;
-    height: 150px;
+    height: 110px;
     align-content: center;
     background-color:rgb(167, 153, 135) ;
     display: flex;
@@ -62,7 +62,7 @@ background-color: #00bbff ;
 }
 .estadisticas{
     font-size:35px;
-    padding: 10px;
+    padding: 0px;
     width: 400px;
     text-align: center;
     background-color: #3b5998 ;
@@ -77,7 +77,10 @@ background-color: #00bbff ;
 {
     background-color: aliceblue;
     width: 400px;
-    height: 100px;
+    height: 60px;
      text-align: center;     
     font-size: 20px;
+}
+footer{
+    text-align: center;    
 }
