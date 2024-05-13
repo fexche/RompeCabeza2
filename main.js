@@ -16,10 +16,11 @@ agregarEvento()
 
 function contartiempo() {
    tiemporegresivoId = setInterval(() => {
-   tiempo++;
-   mostrartiempo.innerHTML = `${formatoHora(tiempo)}`;
+
     if (gano!=true )
     { 
+                tiempo++;
+                mostrartiempo.innerHTML = `${formatoHora(tiempo)}`;
                 if (tiempo<=1800) // 0.5 Minuto
                 { 
                     mostrarmensaje.innerHTML = `😀 💪 Tú puedes...`;
@@ -136,7 +137,7 @@ function compareMatriz(MatrizActual)
     {
             gano=true
             mostrarmensaje.innerHTML=`🎆🎑🎁🎉🎊 FELICIDADES !!!`
-            var duration = 15 * 1000;
+            var duration = 15 * 500;
             var animationEnd = Date.now() + duration;
             var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
@@ -152,19 +153,20 @@ function compareMatriz(MatrizActual)
             confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
             confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
             }, 250);
-            mostrartiempo.innerHTML = `${formatoHora(tiempo)} 🎊 🎇 🏆 Exito....`;
-            setTimeout(()=>{
-                matriz = MatrizInicial()
-                pintarpieza()
-                agregarEvento()
-                tiempo=0
-                gano=false
-                contartiempo()
-            },10000);
 
-
-
-    }
+            mostrartiempo.innerHTML = `${formatoHora(tiempo)}`;
+            setTimeout(Reiniciar,10000);
+    }    
+}
+function Reiniciar()
+{    
+    
+    matriz = MatrizInicial()
+    pintarpieza()
+    agregarEvento()
+    tiempo=0
+    gano=false
+    contartiempo()
 }
 function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
